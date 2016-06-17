@@ -1,7 +1,6 @@
 <?php 
 
 // carga del modelo y los controladores
-require_once 'Models/Conexion.php';
 require_once 'Models/UsuarioModel.php';
 require_once 'Models/ParqueaderoModel.php';
 require_once 'Models/ParqueoModel.php';
@@ -14,6 +13,7 @@ require_once 'Controllers/IndexController.php';
 // enrutamiento
 $map = array(
  'inicio' => array('controller' =>'IndexController', 'action' =>'inicio'),
+ 'usuario' => array('controller' =>'UsuarioController', 'action' => 'index'),
  'newUser' => array('controller' =>'UsuarioController', 'action' =>'Crear')
 );
 

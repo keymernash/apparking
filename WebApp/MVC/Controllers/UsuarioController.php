@@ -7,6 +7,11 @@ class UsuarioController
     {
        $this->usuario = new Usuario();
     }
+
+    public function Index()
+    {
+       require_once 'Views/usuario.php';
+    }
     
     public function Crear()
     {
@@ -17,11 +22,12 @@ class UsuarioController
         $direccion = $_POST['direccion'];
         $usuario = $_POST['usuario'];
         $clave = $_POST['clave'];
+        $tipoUser = $_POST['tipoUser'];
 
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {            
             
-            $this->usuario->Agregar($nombre,$apellido,$telefono,$email,$direccion,$usuario,$clave);
+            $this->usuario->Agregar($nombre,$apellido,$telefono,$email,$direccion,$usuario,$clave,$tipoUser);
             $mensaje = "Se ha agregado el usuario <b>".$nombre."</b> correctamente."; 
          }
         echo $mensaje;

@@ -11,7 +11,7 @@ class IndexController
     
     public function inicio()
     {
-        require_once 'Views/inicio.php';
+        require_once 'Views/index.php';
     }
     
 }
