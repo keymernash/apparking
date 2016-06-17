@@ -5,45 +5,49 @@
 class Usuario 
 {
 	private $conn;
-
 	function __construct()
 	{
 		$this->conn = Conexion::conectar();
-		$resultado = array();
 	}
 
 	public function Agregar($nombre, $apellido, $telefono, $email, $direccion, $usuario , $clave, $tipoUser)
 	{
-		$sql = "INSERT INTO usuario (Id, Nombre, Apellido, Telefono, Email, Direccion, Usuario, Clave) VALUES ('', '$nombre', '$apellido', '$telefono', '$email', '$direccion', '$usuario' , '$clave')";
+		//validar si existe el usuario o el email
+		$sql = "SELECT * FROM usuario WHERE Usuario = '".$usuario."'";
+		$result = $this->conn->query($sql);
+
+		$sql2 = "SELECT * FROM usuario WHERE Email = '".$email."'";
+		$result2 = $this->conn->query($sql2);
+
+		if ($result->num_rows > 0) {
+			return "El usuario ".$usuario." ya esta registrado.";
+		}
+		if ($result2->num_rows > 0) {
+			return "El email ".$email." ya esta registrado.";
+		}
+
+		$sql = "INSERT INTO usuario (Id, Nombre, Apellido, Telefono, Email, Direccion, Usuario, Clave) VALUES ('', '".$nombre."','".$apellido."','".$telefono."','".$direccion."','".$email."','".$usuario."','".$clave."')";		
+		$this->conn->query($sql);
+
+		//id del usuario agredado	
+		$sql = "SELECT MAX(Id) AS id FROM usuario";
+		$result = $this->conn->query($sql);
+
+		$lastUser = $result->fetch_assoc();
+
+		if ($tipoUser == "encargado") {		
+			//si el usuario es encargado
+			$sql = "INSERT INTO encargado (Usuario_Id) VALUES ('".$lastUser['id']."')";
 			$this->conn->query($sql);
 
-		if ($tipoUser == "encargado") {
-			
-			$sql = "SELECT * FROM usuario WHERE Email =".$email;
-			$result = $this->conn->query($sql);
-
-			$a = array();
-			if($result){
-				while($registro = $result->fetch_assoc()){
-				  $a[] = $registro;
-				}
-			}
-
-			echo count($a);
-
-			$sql2 = "INSERT INTO encargado (Usuario_Id) VALUES ('".$a['id']."')";
-			$this->conn->query($sql2);
-
-		} else {
-			$sql = "SELECT * FROM usuario WHERE Usuario = ".$usuario;
-			$sqlExe = $this->conn->query($sql);
-
-			$registrado = $sqlExe->fetch_assoc();
-
-			$sql2 = "INSERT INTO valetparker (Usuario_Id) VALUES ('".$registrado['id']."')";
-			$this->conn->query($sql2);
+		} else {			
+			//si el usuario es valetparking
+			$sql = "INSERT INTO valetparker (Usuario_Id) VALUES ('".$lastUser['id']."')";
+			$this->conn->query($sql);
 		}	
-		/*$sql = "INSERT INTO usuario (Id, Nombre, Apellido, Telefono, Email, Direccion, Usuario, Clave) VALUES ('', '".$nombre."','".$apellido."','".$telefono."','".$direccion."','".$email."','".$usuario."','".$clave."')";*/		
+
+		return "Se ha agregado el usuario <b>".$usuario."</b> correctamente.";
+		/*$sql = "INSERT INTO usuario (Id, Nombre, Apellido, Telefono, Email, Direccion, Usuario, Clave) VALUES ('', '$nombre', '$apellido', '$telefono', '$email', '$direccion', '$usuario' , '$clave')";*/		
 	}
 
 	public function Buscar($id)
@@ -51,7 +55,6 @@ class Usuario
 		$sql = "SELECT * FROM usuario WHERE Id = ".$id;
 
 		$data = $this->conn->query($sql);
-		$this->resultado =  null;
 
 		while ($row = $data->fetch_assoc()) {
 			$this->resultado[] = $row;
@@ -72,7 +75,44 @@ class Usuario
 
 	public function Listar()
 	{
-		# code...
+		$sql = "SELECT * FROM usuario";
+		$result = $this->conn->query($sql);
+
+		$usuarios = array();
+		while ($row = $result->fetch_assoc()) {
+			$usuarios[] = $row;
+		}
+		
+		return $usuarios;
+	}
+	
+	public function ListarContar()
+	{
+		$sql = "SELECT * FROM usuario";
+		$result = $this->conn->query($sql);
+
+		$usuarios = array();
+		while ($row = $result->fetch_assoc()) {
+			$usuarios[] = $row;
+		}
+
+		$datos[0] = $usuarios;
+		$datos[1] = $result->num_rows; 
+
+		return $datos;
+	}
+
+	public function ListarPagina($inicio, $TAMANO_PAGINA)
+	{
+		$sql = "SELECT * FROM usuario ORDER BY Nombre  LIMIT ".$inicio."," . $TAMANO_PAGINA;
+		$result = $this->conn->query($sql);
+
+		$usuarios = array();
+		while ($row = $result->fetch_assoc()) {
+		   $usuarios[] = $row;
+		}
+
+		return $usuarios;
 	}
 }
 

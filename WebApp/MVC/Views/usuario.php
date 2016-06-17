@@ -6,7 +6,7 @@
 			<div class="col s12 card-panel">	
 				<div class="card-content">						
 					<div class="card-tittle">
-						<h4>Administrar Usuarios</h4>
+						<h4>Administrar Usuarios</h4>						
 					</div>		
 					<div class="row">
 					    <div class="col s12">
@@ -14,7 +14,7 @@
 					        <li class="tab col s3"><a class="active" href="#crear">Crear</a></li>
 					        <li class="tab col s3"><a href="#editar">Editar</a></li>
 					        <li class="tab col s3"><a href="#eliminar">Eliminar</a></li>
-					        <li class="tab col s3"><a href="#listar">Listar</a></li>
+					        <li class="tab col s3"><a href="#listar" onclick="location.href ='index.php?ctl=usuarioListar&pagina=1'">Listar</a></li>
 					      </ul>
 					    </div>
 					    <br>
@@ -83,59 +83,7 @@
 									</div>
 									<input type="submit" name="entrar" value="ELIMINAR" class="waves-effect waves-light btn grey darken-3 col s12 m2 offset-m5"/>
 								</form>
-					    </div>
-					    <div id="listar" class="col s12">
-					    	<table class="responsive-table bordered striped">
-					    		<thead>
-					    			<tr>						    				
-						    			<th>Nombre</th>
-						    			<th>Apellido</th>
-						    			<th>Email</th>
-						    			<th>Usuario</th>
-						    			<th>Telefóno</th>
-					    			</tr>
-					    		</thead>
-					    		<tbody>
-					    			<tr>
-					    				<td>Carlos</td>
-					    				<td>Salcedo</td>
-					    				<td>ikarloxi@gmail.com</td>
-					    				<td>ikarloxi</td>
-					    				<td>3136195645</td>
-					    			</tr>
-					    			<tr>
-					    				<td>Carlos</td>
-					    				<td>Salcedo</td>
-					    				<td>ikarloxi@gmail.com</td>
-					    				<td>ikarloxi</td>
-					    				<td>3136195645</td>
-					    			</tr>
-					    			<tr>
-					    				<td>Carlos</td>
-					    				<td>Salcedo</td>
-					    				<td>ikarloxi@gmail.com</td>
-					    				<td>ikarloxi</td>
-					    				<td>3136195645</td>
-					    			</tr>
-					    			<tr>
-					    				<td>Carlos</td>
-					    				<td>Salcedo</td>
-					    				<td>ikarloxi@gmail.com</td>
-					    				<td>ikarloxi</td>
-					    				<td>3136195645</td>
-					    			</tr>
-					    		</tbody>
-					    	</table>
-					    	<ul class="pagination center">
-							    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-							    <li class="active"><a href="#!">1</a></li>
-							    <li class="waves-effect"><a href="#!">2</a></li>
-							    <li class="waves-effect"><a href="#!">3</a></li>
-							    <li class="waves-effect"><a href="#!">4</a></li>
-							    <li class="waves-effect"><a href="#!">5</a></li>
-							    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-							  </ul>
-					    </div>
+					    </div>					    
 				  	</div>				
 				</div>		  
 			</div>

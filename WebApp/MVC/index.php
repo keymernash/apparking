@@ -14,7 +14,8 @@ require_once 'Controllers/IndexController.php';
 $map = array(
  'inicio' => array('controller' =>'IndexController', 'action' =>'inicio'),
  'usuario' => array('controller' =>'UsuarioController', 'action' => 'index'),
- 'newUser' => array('controller' =>'UsuarioController', 'action' =>'Crear')
+ 'newUser' => array('controller' =>'UsuarioController', 'action' =>'Crear'),
+ 'usuarioListar' => array('controller' =>'UsuarioController', 'action' => 'Listar')
 );
 
 // Parseo de la ruta

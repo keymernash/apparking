@@ -18,12 +18,12 @@
 			    	<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons grey-text text-darken-4">menu</i></a>
 			    	<ul class="right hide-on-med-and-down">
 			    		<li><a href="parqueadero.html"><i class="material-icons left">view_quilt</i>Parqueaderos</a></li>
-		    			<li><a href="usuario.html"><i class="material-icons left">supervisor_account</i>Usuarios</a></li>
+		    			<li><a href="index.php?ctl=usuario"><i class="material-icons left">supervisor_account</i>Usuarios</a></li>
 				    	<li><a class="dropdown-button" href="#!" data-activates="dropdownAdmin"><i class="material-icons left">perm_identity</i>Administrador<i class="material-icons right">arrow_drop_down</i></a></li>
 				  	</ul>
 				  	<ul id="slide-out" class="side-nav">
 				    	<li><a href="parqueadero.html"><i class="material-icons left">view_quilt</i>Parqueaderos</a></li>
-		    			<li><a href="usuario.html"><i class="material-icons left">supervisor_account</i>Usuarios</a></li>
+		    			<li><a href="index.php?ctl=usuario"><i class="material-icons left">supervisor_account</i>Usuarios</a></li>
 				    	<li><a href="#"><i class="material-icons left">power_settings_new</i>Salir</a></li>
 				  	</ul>					  	
 				  	<ul id="dropdownAdmin" class="dropdown-content">
