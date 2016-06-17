@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>MaterialDesign</title>
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script src="js/material.min.js"></script>
+</head>
+<body class="black">
+<header> 	
+	<nav class="yellow accent-4">
+		<div class="nav-wrapper container">
+			<div class="row">
+				<div class="col s12">
+			  		<a href="#" class="brand-logo grey-text text-darken-4"><b>Apparking</b></a>
+			    	<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons grey-text text-darken-4">menu</i></a>
+			    	<ul class="right hide-on-med-and-down">
+			    		<li><a href="parqueadero.html"><i class="material-icons left">view_quilt</i>Parqueaderos</a></li>
+		    			<li><a href="usuario.html"><i class="material-icons left">supervisor_account</i>Usuarios</a></li>
+				    	<li><a class="dropdown-button" href="#!" data-activates="dropdownAdmin"><i class="material-icons left">perm_identity</i>Administrador<i class="material-icons right">arrow_drop_down</i></a></li>
+				  	</ul>
+				  	<ul id="slide-out" class="side-nav">
+				    	<li><a href="parqueadero.html"><i class="material-icons left">view_quilt</i>Parqueaderos</a></li>
+		    			<li><a href="usuario.html"><i class="material-icons left">supervisor_account</i>Usuarios</a></li>
+				    	<li><a href="#"><i class="material-icons left">power_settings_new</i>Salir</a></li>
+				  	</ul>					  	
+				  	<ul id="dropdownAdmin" class="dropdown-content">
+						<li class="right-align"><a href=""><i class="material-icons left">power_settings_new</i>Salir</a></li>	
+					</ul>
+			  	</div>
+		  	</div>
+		</div>
+	</nav>
+</header>
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+		<h3 class="white-text"><b>Parqueadero la 27 con 2</b></h3>
+			
+				<div class="col s12 card-panel">	
+					<div class="card-content">						
+						<div class="card-tittle">
+							<h4>Administrar Parqueos</h4>
+						</div>		
+						<div class="row">
+						    <div class="col s12">
+						      <ul class="tabs">
+						        <li class="tab col s3"><a class="active" href="#crear">Registrar</a></li>
+						        <li class="tab col s3"><a href="#editar">Dar de Alta</a></li>
+						        <li class="tab col s3"><a href="#listar">Listar</a></li>
+						      </ul>
+						    </div>
+						    <br>
+						    <br>
+						    <br>
+						    <div id="crear" class="col s12">
+						    	<form class="col s12" action="" method="POST">	
+									<div class="row">										
+										<div class="input-field col s12 m4 offset-m2">
+										  <input name="cedula" type="text" class="validate" required>
+										  <label for="cedula">Cedula</label>
+										</div>
+										<div class="input-field col s12 m4">
+										  <input name="nombre" type="text" class="validate" required>
+										  <label for="nombre">Nombre y Apellido</label>
+										</div>
+										<div class="input-field col s12 m4 offset-m2">
+										  <input name="telefono" type="text" class="validate" required>
+										  <label for="telefono">Teléfono</label>
+										</div>
+										<div class="input-field col s12 m4">
+										  <input name="placa" type="text" class="validate required">
+										  <label for="placa">Placa Vehiculo</label>
+										</div>
+										<div class="input-field col s12 m4 offset-m2">
+										  <input name="marcaModel" type="password" class="validate" required>
+										  <label for="marcaModel">Marca y Modelo</label>
+										</div>
+										<div class="input-field col s12 m4">
+										  <input name="color" type="text" class="validate" required>
+										  <label for="color">Color</label>
+										</div>
+										<div class="input-field col s12 m4 offset-m2">
+										  <input name="horaIn" type="text" class="validate" required>
+										  <label for="horaIn">Hora Entrada</label>
+										</div>
+										<div class="input-field col s12 m4">
+										  <input name="horaOut" type="text" class="validate" required>
+										  <label for="HoraOut">Hora Salida</label>
+										</div>	
+										<div class="input-field col s12 m4 offset-m2">
+											<input type="checkbox" class="filled-in" id="valet"/>
+      										<label for="valet">Valet Parking</label>
+										</div>
+										<div class="input-field col s12 m4">
+										    <select>
+										      <option value="" disabled selected>Seleccione el Valet Parking</option>
+										      <option value="">Fulanito</option>
+										      <option value="">Sutanito</option>
+										      <option value="">Megano</option>
+										    </select>
+									  	</div>										  									
+									</div>
+									<input type="submit" name="entrar" value="CREAR" class="waves-effect waves-light btn grey darken-3 col s12 m2 offset-m5"/>
+								</form>
+						    </div>
+						    <div id="editar" class="col s12">
+							    <form class="col s12" action="" method="POST">	
+									<div class="row">										  
+								        <div class="input-field col s12 m6 offset-m3">
+								          <input name="codigo" type="text" class="validate" required>
+										  	<label for="codigo">Codigo de Parqueo</label>
+								        </div>
+									</div>
+									<input type="submit" name="entrar" value="DAR DE ALTA" class="waves-effect waves-light btn grey darken-3 col s12 m2 offset-m5"/>
+								</form>
+						    </div>
+						    <div id="listar" class="col s12">
+						    	<table class="responsive-table bordered striped">
+						    		<thead>
+						    			<tr>						    				
+							    			<th>Codigo</th>
+							    			<th>Cedula</th>
+							    			<th>Nombre y Apellido</th>
+							    			<th>Marca y Modelo</th>
+							    			<th>Color</th>
+							    			<th>Placa</th>
+							    			<th>Hora Entrada</th>
+							    			<th>Hora Salida</th>
+						    			</tr>
+						    		</thead>
+						    		<tbody>
+						    			<tr>
+						    				<td>5645</td>
+						    				<td>1065003539</td>
+						    				<td>Carlos Salcedo</td>
+						    				<td>Mazda 6</td>
+						    				<td>Negro</td>
+						    				<td>HOY-345</td>
+						    				<td>7:50 a.m.</td>
+						    				<td>11:55 a.m.</td>
+						    			</tr>	
+						    			<tr>
+						    				<td>5645</td>
+						    				<td>1065003539</td>
+						    				<td>Carlos Salcedo</td>
+						    				<td>Mazda 6</td>
+						    				<td>Negro</td>
+						    				<td>HOY-345</td>
+						    				<td>7:50 a.m.</td>
+						    				<td>11:55 a.m.</td>
+						    			</tr>
+						    			<tr>
+						    				<td>5645</td>
+						    				<td>1065003539</td>
+						    				<td>Carlos Salcedo</td>
+						    				<td>Mazda 6</td>
+						    				<td>Negro</td>
+						    				<td>HOY-345</td>
+						    				<td>7:50 a.m.</td>
+						    				<td>11:55 a.m.</td>
+						    			</tr>
+						    			<tr>
+						    				<td>5645</td>
+						    				<td>1065003539</td>
+						    				<td>Carlos Salcedo</td>
+						    				<td>Mazda 6</td>
+						    				<td>Negro</td>
+						    				<td>HOY-345</td>
+						    				<td>7:50 a.m.</td>
+						    				<td>11:55 a.m.</td>
+						    			</tr>		    			
+						    		</tbody>
+						    	</table>
+						    	<ul class="pagination center">
+								    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+								    <li class="active"><a href="#!">1</a></li>
+								    <li class="waves-effect"><a href="#!">2</a></li>
+								    <li class="waves-effect"><a href="#!">3</a></li>
+								    <li class="waves-effect"><a href="#!">4</a></li>
+								    <li class="waves-effect"><a href="#!">5</a></li>
+								    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+								  </ul>
+						    </div>
+					  	</div>				
+					</div>		  
+				</div>			
+        
+		</div>		
+	</div>	
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script>
+	$( document ).ready(function(){
+		$('.button-collapse').sideNav();
+		$(".dropdown-button").dropdown();   
+		$('ul.tabs').tabs(); 
+		$('select').material_select();    
+	}); 
+</script>
+</body>
+</html>

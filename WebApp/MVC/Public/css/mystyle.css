@@ -1,0 +1,22 @@
+body{
+	background-image: url("../image/fondo2.png");
+	background-size: cover;
+}
+nav div ul li a{
+	color: #212121 !important;
+}
+.container{
+	width: 90%;
+}
+.tabs .indicator{
+	background-color: darkgray !important;
+}
+.tabs li a{
+	color: black !important;
+}
+.tabs li a:hover{
+	color: gray !important;
+}
+.material-icons{
+	vertical-align: middle;
+}
