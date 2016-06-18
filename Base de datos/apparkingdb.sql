@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-06-2016 a las 22:10:55
+-- Tiempo de generación: 18-06-2016 a las 19:40:13
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.21
 
@@ -74,7 +74,7 @@ CREATE TABLE `parqueo` (
   `Id` int(11) NOT NULL,
   `Parqueadero_NIT` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `Cliente_Cedula` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
-  `ValetParker_Usuario_Id` int(11) DEFAULT NULL,
+  `ValetParking` varchar(50) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `Placa` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `Fecha` date NOT NULL,
   `Hora_entrada` time NOT NULL,
@@ -106,7 +106,8 @@ CREATE TABLE `usuario` (
 --
 
 CREATE TABLE `valetparker` (
-  `Usuario_Id` int(11) NOT NULL
+  `Usuario_Id` int(11) NOT NULL,
+  `Parqueadero_NIT` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
