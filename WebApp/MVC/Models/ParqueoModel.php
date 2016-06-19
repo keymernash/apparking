@@ -2,23 +2,39 @@
 /**
 * 
 */
-
-require_once "Conexion.php";
-
-class Parqueo extends Conexion
-{
-	
+class Parqueo 
+{	
+	private $conn;
 	function __construct()
 	{
-		# code...
+		$this->conn = Conexion::conectar();
 	}
 
-	public function Agregar($datos)
+	public function Agregar($nit, $cedula, $placa, $fechaIn, $horaIn, $fechaOut, $horaOut , $estado, $valetParking)
 	{
-		# code...
+		$sql = "INSERT INTO parqueo (Id, Parqueadero_Nit, Cliente_Cedula, Placa, Fecha_entrada, Hora_entrada, Fecha_salida, Hora_salida, Estado, ValetParking) VALUES ('', '$nit', '$cedula', '$placa', '$fechaIn', '$horaIn', '$fechaOut', '$horaOut', '$estado', '$valetParking')";
+		$result = $this->conn->query($sql);
+
+		if ($result) 
+		{
+			$sql = "SELECT Disponibilidad FROM parqueadero WHERE NIT = ".$nit;
+			$result = $this->conn->query($sql);
+
+			$dis = $result->fetch_assoc();
+
+			$disActual = $dis['Disponibilidad'] - 1;
+
+			$sql = "UPDATE parqueadero SET Disponibilidad = '$disActual' WHERE NIT = ".$nit;
+			$result = $this->conn->query($sql);
+
+			return "Parqueo de vehiculo con Placa: <b>".$placa."</b> agregado correctamente. Disponibilidad: ".$disActual;
+		} else {
+			return "ERROR al registrar parqueo";
+		}
+			
 	}
 
-	public function CargarEditar($id)
+	public function Buscar($id)
 	{
 		# code...
 	}

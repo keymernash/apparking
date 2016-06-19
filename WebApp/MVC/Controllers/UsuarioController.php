@@ -6,11 +6,12 @@ class UsuarioController
     public function __construct()
     {
        $this->usuario = new Usuario();
+       $this->parqueadero = new Parqueadero();
     }
 
     public function Index()
     {       
-        $usuarios = $this->usuario->Listar();
+        $parqueaderos = $this->parqueadero->ListarParkValet();
 
         require_once 'Views/usuario.php';        
     }
@@ -26,10 +27,18 @@ class UsuarioController
         $clave = $_POST['clave'];
         $tipoUser = $_POST['tipoUser'];
 
+        
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {            
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {    
+
+            if (isset($_POST['park'])) {
+                $park = $_POST['park'];
+                $new = $this->usuario->Agregar($nombre,$apellido,$telefono,$email,$direccion,$usuario,$clave,$tipoUser,$park);
+            }else{
+                $new = $this->usuario->Agregar($nombre,$apellido,$telefono,$email,$direccion,$usuario,$clave,$tipoUser,"");
+            }
             
-            $new = $this->usuario->Agregar($nombre,$apellido,$telefono,$email,$direccion,$usuario,$clave,$tipoUser);
             //$mensaje = "Se ha agregado el usuario <b>".$nombre."</b> correctamente."; 
          }
         echo $new;
@@ -60,6 +69,15 @@ class UsuarioController
         $usuarios = $this->usuario->ListarPagina($inicio, $TAMANO_PAGINA);
 
         require_once 'Views/usuarioListar.php';
+    }
+
+    public function ListarEncargados()
+    {
+        $encargados = $this->usuario->Encargados();
+
+        foreach ($encargados as $encargado) {
+            echo $encargado['Id']." ---> ".$encargado['Nombre']."</br>";
+        }
     }
     
 }

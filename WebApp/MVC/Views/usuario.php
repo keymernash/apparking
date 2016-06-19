@@ -52,13 +52,21 @@
 										  <label for="clave">Clave</label>
 										</div>		
 										<div class="input-field col s12 m4">
-										    <select name="tipoUser" required>
+										    <select name="tipoUser" id="valet" required>
 												<option value="" disabled selected>Tipo de usuario</option>
 												<option value="encargado">Encargado de parqueadero</option>
 												<option value="valetparking">Valet parking</option>
 										    </select>
-										  </div>								
-										</div>
+										</div>	
+										<div class="parqueaderos input-field col s12 m12" id="parqueaderos_valetparking">
+											<select name="park" id="valet">
+												<option value="null" disabled selected>Seleccione parqueadero</option>
+												<?php foreach ($parqueaderos as $parqueadero): ?>
+													<option value="<?php echo $parqueadero['NIT'] ?>"><?php echo $parqueadero['Nombre'] ?></option>
+												<?php endforeach ?>
+										    </select>
+										</div>							
+									</div>
 									<input type="submit" name="entrar" value="CREAR" class="waves-effect waves-light btn grey darken-3 col s12 m2 offset-m5"/>
 								</form>
 					    </div>

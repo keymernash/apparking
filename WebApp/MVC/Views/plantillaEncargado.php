@@ -1,25 +1,25 @@
 <?php
-
+    
 $sesion = new Sesion();
 $usuario = $sesion->get("usuario");
 
-if( $usuario == false )
+if( $usuario == false || $usuario == "admin" )
 {   
     header("Location: index.php?ctl=login");      
 }
-elseif( $usuario == "admin" )
+else
 {
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>Apparking-Admin</title>
+	<title>Apparking</title>
 	<link rel="stylesheet" href="./Public/css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="./Public/css/mystyle.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 </head>
 <body class="black">
 <header> 	
@@ -30,18 +30,13 @@ elseif( $usuario == "admin" )
 			  		<a href="#" class="brand-logo grey-text text-darken-4"><b>Apparking</b></a>
 			    	<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons grey-text text-darken-4">menu</i></a>
 			    	<ul class="right hide-on-med-and-down">
-			    		<li><a href="index.php?ctl=parqueadero"><i class="material-icons left">view_quilt</i>Parqueaderos</a></li>
-		    			<li><a href="index.php?ctl=usuario"><i class="material-icons left">supervisor_account</i>Usuarios</a></li>
-				    	<li><a class="dropdown-button" href="#!" data-activates="dropdownAdmin"><i class="material-icons left">perm_identity</i>Administrador<i class="material-icons right">arrow_drop_down</i></a></li>
+			    		<li><a href="#"><i class="material-icons left">perm_identity</i><?php echo $usuario;?></a></li>
+		    			<li><a href="index.php?ctl=logout"><i class="material-icons left">power_settings_new</i>Salir</a></li>
 				  	</ul>
+				  	<!--Menu Mobile-->
 				  	<ul id="slide-out" class="side-nav">
-				    	<li><a href="parqueadero.html"><i class="material-icons left">view_quilt</i>Parqueaderos</a></li>
-		    			<li><a href="index.php?ctl=usuario"><i class="material-icons left">supervisor_account</i>Usuarios</a></li>
-				    	<li><a href="index.php?ctl=logout"><i class="material-icons left">power_settings_new</i>Salir</a></li>
-				  	</ul>					  	
-				  	<ul id="dropdownAdmin" class="dropdown-content">
-						<li class="right-align"><a href="index.php?ctl=logout"><i class="material-icons left">power_settings_new</i>Salir</a></li>	
-					</ul>
+		    			<li><a href="index.php?ctl=logout"><i class="material-icons left">power_settings_new</i>Salir</a></li>
+				  	</ul>
 			  	</div>
 		  	</div>
 		</div>
@@ -57,6 +52,4 @@ elseif( $usuario == "admin" )
 </body>
 </html>
 
-<?php }else{
-	header("Location: index.php?ctl=login"); 
-	} ?>
+<?php } ?>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X8 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2.1006mm" height="2.9634mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 15 21"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="722" font-variant="normal" style="fill-rule:nonzero" font-weight="700">
+	<font-face 
+		font-family="Arial">
+		<font-face-src>
+			<font-face-name name="Arial Bold"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="P" horiz-adv-x="666" d="M73.0078 0l0 715.971 231.81 0c87.8568,0 145.026,-3.46477 171.671,-10.6418 40.9998,-10.8068 75.3176,-34.1528 103.036,-70.2029 27.6357,-35.9677 41.4948,-82.4946 41.4948,-139.498 0,-43.9696 -8.00198,-80.7623 -23.841,-110.79 -16.004,-30.028 -36.2151,-53.539 -60.7161,-70.6979 -24.5009,-16.9939 -49.4968,-28.2957 -74.8226,-33.8228 -34.4828,-6.84705 -84.3095,-10.3118 -149.645,-10.3118l-93.9614 0 0 -270.005 -145.026 0zm145.026 595.034l0 -204.009 78.7824 0c56.8388,0 94.7038,3.79475 113.843,11.3018 19.1388,7.50701 34.1528,19.1388 45.0421,35.3077 10.8068,16.004 16.3339,34.5653 16.3339,55.8489 0,26.1508 -7.672,47.6819 -22.851,64.6758 -15.344,16.9939 -34.4828,27.6357 -57.9937,32.0079 -17.1589,3.1348 -51.7241,4.86718 -103.696,4.86718l-69.4605 0z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Arial";font-variant:normal;font-weight:bold;src:url("#FontID0") format(svg)}
+    .fil0 {fill:#FEFEFE}
+    .fil1 {fill:#2B2A29}
+    .fil2 {fill:#00A0E3}
+    .fnt0 {font-weight:bold;font-size:8.43877px;font-family:'Arial'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Capa_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1639865909520">
+   <path class="fil0" d="M3 7c0,2 0,2 1,4 3,2 8,0 8,-3 0,-2 0,-3 -1,-4 -3,-3 -8,-1 -8,3z"/>
+   <text x="5" y="10"  class="fil1 fnt0">P</text>
+   <path class="fil2" d="M3 7c0,0 0,0 0,-1 1,-4 7,-4 8,0 1,1 1,2 0,3 0,1 0,1 -1,1 -1,2 -4,2 -6,0 0,0 -1,-2 -1,-3zm-3 0c0,1 0,2 0,3 1,2 2,3 4,5 1,2 2,3 3,5 0,1 0,1 0,1 1,0 1,-2 2,-2l0 -2c2,-2 3,-4 4,-6 2,-2 2,-5 1,-7 -1,-2 -4,-4 -6,-4 -2,0 -3,0 -4,1 -1,0 -2,1 -3,3 -1,1 -1,2 -1,3z"/>
+  </g>
+ </g>
+</svg>
