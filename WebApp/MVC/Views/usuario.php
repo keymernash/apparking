@@ -53,9 +53,9 @@
 										</div>		
 										<div class="input-field col s12 m4">
 										    <select name="tipoUser" id="valet" required>
-												<option value="" disabled selected>Tipo de usuario</option>
-												<option value="encargado">Encargado de parqueadero</option>
-												<option value="valetparking">Valet parking</option>
+													<option value="" disabled selected>Tipo de usuario</option>
+													<option value="encargado">Encargado de parqueadero</option>
+													<option value="valetparking">Valet parking</option>
 										    </select>
 										</div>	
 										<div class="parqueaderos input-field col s12 m12" id="parqueaderos_valetparking">

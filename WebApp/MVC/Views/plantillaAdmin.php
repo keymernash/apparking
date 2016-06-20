@@ -27,7 +27,7 @@ elseif( $usuario == "admin" )
 		<div class="nav-wrapper container">
 			<div class="row">
 				<div class="col s12">
-			  		<a href="#" class="brand-logo grey-text text-darken-4"><b>Apparking</b></a>
+			  		<a href="#" class="brand-logo grey-text text-darken-4"><b><i class="material-icons left">room</i>Apparking</b></a>
 			    	<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons grey-text text-darken-4">menu</i></a>
 			    	<ul class="right hide-on-med-and-down">
 			    		<li><a href="index.php?ctl=parqueadero"><i class="material-icons left">view_quilt</i>Parqueaderos</a></li>

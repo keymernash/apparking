@@ -7,16 +7,22 @@
         $usuario = $_POST["usuario"];
         $clave = $_POST["clave"];
         
-        if($sesion->validarUsuario($usuario,$clave) == true)
+        if($sesion->validarEncargado($usuario,$clave) == true)
         {           
             $sesion->set("usuario",$usuario);            
             header("location: index.php?ctl=inicio2&usuario=".$usuario);
         }
+        elseif ($sesion->validarValetParking($usuario,$clave) == true)
+        {
+        	$sesion->set("usuario",$usuario);            
+            header("location: index.php?ctl=inicio3"); 
+        } 
         elseif ($sesion->validarAdmin($usuario,$clave) == true)
         {
         	$sesion->set("usuario",$usuario);            
             header("location: index.php?ctl=inicio");        	          
-        }else{
+        }else
+        {
         	$error = "Usuario o clave es incorrecta.";  
         }
     }
@@ -37,7 +43,7 @@
 		<div class="nav-wrapper container">
 			<div class="row">
 				<div class="col s12">
-			  		<a href="#" class="brand-logo grey-text text-darken-4"><b>Apparking</b></a>			    	
+			  		<a href="#" class="brand-logo grey-text text-darken-4"><b><i class="material-icons left">room</i>Apparking</b></a>			    	
 			  	</div>
 		  	</div>
 		</div>

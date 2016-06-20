@@ -20,23 +20,18 @@
 						    <div id="crear" class="col s12">
 						    	<form class="col s12" action="index.php?ctl=newParqueo" method="POST">	
 									<div class="row">
-										<div class="input-field col s12 m12">
+										<div class="input-field col s12 m6">
 										  <h5><b>NIT: <?php echo $datosP['NIT']; ?></b></h5>	
-										</div>										
+										</div>	
+										<div class="input-field col s12 m6">
+										  <h5>Cupos disponibles: <b><?php echo $datosP['Disponibilidad']; ?></b></h5>	
+										</div>									
 										<div class="input-field col s12 m12">
 										  <input name="nit" type="text" class="validate" hidden value="<?php echo $datosP['NIT']; ?>">	
 										</div>
 										<div class="input-field col s12 m6">
 										  <input name="cedula" type="text" class="validate" required>
 										  <label for="cedula">Cédula</label>
-										</div>
-										<div class="input-field col s12 m6">
-										  <input name="nombre" type="text" class="validate" required>
-										  <label for="nombre">Nombre</label>
-										</div>
-										<div class="input-field col s12 m6">
-										  <input name="celular" type="text" class="validate" required>
-										  <label for="celular">Celular</label>
 										</div>
 										<div class="input-field col s12 m6">
 										  <input name="placa" type="text" class="validate" required>
@@ -47,11 +42,12 @@
 								</form>
 						    </div>
 						    <div id="editar" class="col s12">
-							    <form class="col s12" action="" method="POST">	
+							    <form class="col s12" action="index.php?ctl=deAlta" method="POST">	
 									<div class="row">										  
 								        <div class="input-field col s12 m6 offset-m3">
-								          <input name="codigo" type="text" class="validate" required>
-										  	<label for="codigo">Codigo de Parqueo</label>
+								        	<input name="nit" type="text" class="validate" hidden value="<?php echo $datosP['NIT']; ?>">	
+								          <input name="id" type="text" class="validate" required>
+										  	<label for="id">Codigo de Parqueo</label>
 								        </div>
 									</div>
 									<input type="submit" name="entrar" value="DAR DE ALTA" class="waves-effect waves-light btn grey darken-3 col s12 m2 offset-m5"/>

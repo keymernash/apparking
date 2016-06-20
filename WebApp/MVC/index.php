@@ -14,10 +14,12 @@ require_once 'Controllers/IndexController.php';
 
 // enrutamiento
 $map = array(
+    'valetParking' => array('controller' =>'IndexController', 'action' =>'ValetParking'),
     'login' => array('controller' =>'IndexController', 'action' =>'Login'),
     'logout' => array('controller' =>'IndexController', 'action' =>'Logout'),
     'inicio' => array('controller' =>'IndexController', 'action' =>'Inicio'),
     'inicio2' => array('controller' =>'IndexController', 'action' =>'Inicio2'),
+    'inicio3' => array('controller' =>'IndexController', 'action' =>'Inicio3'),
     'usuario' => array('controller' =>'UsuarioController', 'action' => 'Index'),
     'newUser' => array('controller' =>'UsuarioController', 'action' =>'Crear'),
     'usuarioListar' => array('controller' =>'UsuarioController', 'action' => 'Listar'),
@@ -25,6 +27,8 @@ $map = array(
     'newParqueadero' => array('controller' =>'ParqueaderoController', 'action' => 'Crear'),
     'parkListar' => array('controller' =>'ParqueaderoController', 'action' => 'Listar'),
     'newParqueo' => array('controller' =>'ParqueoController', 'action' =>'Crear'),
+    'newValet' => array('controller' =>'ParqueoController', 'action' =>'CrearConValet'),
+    'deAlta' => array('controller' =>'ParqueoController', 'action' =>'DeAlta'),
     'buscarPark' => array('controller' =>'ParqueaderoController', 'action' => 'Buscar')
 );
 
