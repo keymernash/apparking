@@ -182,6 +182,50 @@ class Parqueo
 		return $result->fetch_assoc();
 	}
 
+	public function CargarServicios($nit)
+	{
+		$sql = "SELECT * FROM parqueo WHERE Parqueadero_NIT = '$nit' AND Estado = 'pendiente'";
+		$result = $this->conn->query($sql);
+
+		$servicios = array();
+		if ($result) {
+			while ($row = $result->fetch_assoc()) {
+				$servicios[] = $row; 
+			}
+		}	
+
+		return $servicios;
+	}
+
+	public function CargarUserValet($nit)
+	{
+		$sql = "SELECT Id, Nombre FROM usuario WHERE Id IN (SELECT Usuario_Id FROM valetparker WHERE Parqueadero_NIT = '$nit')";
+		$result = $this->conn->query($sql);
+
+		$valetParking = array();
+		if ($result) {
+			while ($row = $result->fetch_assoc()) {
+				$valetParking[] = $row; 
+			}
+		}	
+
+		return $valetParking;
+	}
+
+	public function AprobarServicio($id, $valetParking)
+	{
+		$sql = "UPDATE parqueo SET Estado = 'en camino', ValetParking = '$valetParking' WHERE Id = ".$id;
+		$result = $this->conn->query($sql);
+
+		if ($result) 
+		{
+			return "Servicio de Valet Parking con Id: <b>".$id."</b> aprobado correctamente.";
+		}else
+		{
+			return "ERROR: No se pudo aprobar el parqueo.";
+		}
+	}
+
 }
 
 ?>

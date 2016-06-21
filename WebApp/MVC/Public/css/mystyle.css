@@ -27,3 +27,6 @@ nav div ul li a{
 .material-icons{
 	vertical-align: middle;
 }
+.modal{
+	overflow: inherit;
+}

@@ -29,6 +29,9 @@ $map = array(
     'newParqueo' => array('controller' =>'ParqueoController', 'action' =>'Crear'),
     'newValet' => array('controller' =>'ParqueoController', 'action' =>'CrearConValet'),
     'deAlta' => array('controller' =>'ParqueoController', 'action' =>'DeAlta'),
+    'servicios' => array('controller' =>'ParqueoController', 'action' =>'servicioValet'),
+    'aprobarId' => array('controller' =>'ParqueoController', 'action' =>'aprobarBuscar'),
+    'aprobar' => array('controller' =>'ParqueoController', 'action' =>'Aprobar'),
     'buscarPark' => array('controller' =>'ParqueaderoController', 'action' => 'Buscar')
 );
 

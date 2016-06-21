@@ -7,12 +7,23 @@ class ParqueoController
 	
 	function __construct()
 	{
+        $this->usuario = new Usuario();
 		$this->parqueo = new Parqueo();
 	}
 
-	public function Index()
+	public function servicioValet()
 	{	
-		
+        if (isset($_GET['usuario']) || isset($_GET['nit']) ) {
+            $usuario = $_GET['usuario']; 
+            $nit =  $_GET['nit'];
+            $datosP = $this->usuario->obtenerDatosSesion($usuario);
+            $servicios = $this->parqueo->CargarServicios($nit);
+            $valetParking = $this->parqueo->CargarUserValet($nit);
+
+		  require_once 'Views/serviciosValet.php';
+        } else {
+            header('Location: index.php?ctl=login');
+        }
 	}
 
 	public function Crear()
@@ -79,6 +90,37 @@ class ParqueoController
          }
         echo $new; 
 	}
+
+    public function Aprobar()
+    {
+        $id = $_POST['id'];
+        $valetParking = $_POST['valetParking'];
+        if ($valetParking == "") {
+            //redireccionar a la pagina anterior
+            header('Location:' . getenv('HTTP_REFERER'));
+        } else {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {            
+                
+                $new = $this->parqueo->AprobarServicio($id, $valetParking);
+                //$mensaje = "Se ha agregado el usuario <b>".$nombre."</b> correctamente."; 
+             }
+            echo $new; 
+        }       
+
+    }
+
+    public function AprobarBuscar()
+    {
+        $id = $_GET['id'];  
+        $usuario = $_GET['usuario']; 
+        $nit =  $_GET['nit'];
+        $datosP = $this->usuario->obtenerDatosSesion($usuario);
+        $valetParking = $this->parqueo->CargarUserValet($nit);         
+
+        require_once 'Views/aprobarServicio.php';
+        
+
+    }
 }
 
 

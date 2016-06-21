@@ -30,13 +30,19 @@ else
 			  		<a href="#" class="brand-logo grey-text text-darken-4"><b><i class="material-icons left">room</i>Apparking</b></a>
 			    	<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons grey-text text-darken-4">menu</i></a>
 			    	<ul class="right hide-on-med-and-down">
-			    		<li><a href="#"><i class="material-icons left">perm_identity</i><?php echo $usuario;?></a></li>
-		    			<li><a href="index.php?ctl=logout"><i class="material-icons left">power_settings_new</i>Salir</a></li>
+			    		<li><a href="index.php?ctl=inicio2&usuario=<?php echo $usuario;?>"><i class="material-icons left">view_quilt</i>Parqueos</a></li>	
+			    		<li><a href="index.php?ctl=servicios&usuario=<?php echo $usuario;?>&nit=<?php echo $datosP['NIT']; ?>"><i class="material-icons left">import_export</i>Servicios Valet Parking</a></li>			    		
+		    			<li><a class="dropdown-button" href="#!" data-activates="dropdownAdmin"><i class="material-icons left">perm_identity</i><?php echo $usuario;?><i class="material-icons right">arrow_drop_down</i></a></li>
 				  	</ul>
 				  	<!--Menu Mobile-->
 				  	<ul id="slide-out" class="side-nav">
+				  		<li><a href="index.php?ctl=inicio2&usuario=<?php echo $usuario;?>"><i class="material-icons left">view_quilt</i>Parqueos</a></li>	
+			    		<li><a href="index.php?ctl=servicios&usuario=<?php echo $usuario;?>&nit=<?php echo $datosP['NIT']; ?>"><i class="material-icons left">import_export</i>Servicios</a></li>		
 		    			<li><a href="index.php?ctl=logout"><i class="material-icons left">power_settings_new</i>Salir</a></li>
 				  	</ul>
+				  	<ul id="dropdownAdmin" class="dropdown-content">
+						<li class="right-align"><a href="index.php?ctl=logout"><i class="material-icons left">power_settings_new</i>Salir</a></li>	
+					</ul>
 			  	</div>
 		  	</div>
 		</div>

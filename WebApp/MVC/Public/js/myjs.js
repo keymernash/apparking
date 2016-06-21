@@ -3,6 +3,7 @@ $( document ).ready(function(){
 	$(".dropdown-button").dropdown();   
 	$('ul.tabs').tabs(); 
 	$('select').material_select();
+	$('.modal-trigger').leanModal();
 
 	$(".parqueaderos").hide();
 	$("#valet").change(function(){
