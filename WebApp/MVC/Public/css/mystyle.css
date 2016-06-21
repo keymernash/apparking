@@ -12,6 +12,10 @@ nav div ul li a{
 	
 	border-radius: 6px;
 }
+.cantidad{
+	font-size: 80px;
+	margin: 0 !important;
+}
 .container{
 	width: 90%;
 }

@@ -134,7 +134,25 @@ class Usuario
 		$datosP = $result->fetch_assoc();
 
 		return $datosP;
-	}	
+	}
+
+	public function ContarUsuarios()
+		{
+			$sql = "SELECT * FROM usuario";
+			$result = $this->conn->query($sql);
+
+			$users = array();
+			$cantidad = 0;
+			if ($result) {
+				while ($users = $result->fetch_assoc()) {
+					$users[] = count($users);
+					$cantidad++;
+				}
+
+				return $cantidad;
+			}
+
+		}	
 
 }
 

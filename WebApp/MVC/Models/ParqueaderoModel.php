@@ -87,6 +87,7 @@ class Parqueadero
 
 		return $parqueaderos;
 	}
+	
 }
 
 ?>

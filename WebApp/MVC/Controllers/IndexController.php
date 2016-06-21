@@ -15,6 +15,8 @@ class IndexController
     
     public function Inicio()
     {
+        $cantidadU = $this->usuario->ContarUsuarios();
+        $cantidadP = $this->parqueadero->ListarContar()[1];
         require_once 'Views/index.php';
     }
 
@@ -22,7 +24,7 @@ class IndexController
     {  
         if (isset($_GET['usuario'])) {
             $usuario = $_GET['usuario'];  
-            $datosP = $this->usuario->obtenerDatosSesion($usuario);
+            $datosP = $this->usuario->obtenerDatosSesion($usuario);            
 
             require_once 'Views/index2.php';
         } else {
@@ -43,7 +45,7 @@ class IndexController
     
      public function ValetParking()
     {
-        $parqueaderos = $this->parqueadero->ListarContar()[0];
+        $parqueaderos = $this->parqueadero->ListarParkValet();
         require_once 'Views/valetParking.php';
     }
     
