@@ -35,9 +35,9 @@ elseif( $usuario == "admin" )
 				    	<li><a class="dropdown-button" href="#!" data-activates="dropdownAdmin"><i class="material-icons left">perm_identity</i>Administrador<i class="material-icons right">arrow_drop_down</i></a></li>
 				  	</ul>
 				  	<ul id="slide-out" class="side-nav">
-				    	<li><a href="parqueadero.html"><i class="material-icons left">view_quilt</i>Parqueaderos</a></li>
+				    	<li><a href="index.php?ctl=parqueadero"><i class="material-icons left">view_quilt</i>Parqueaderos</a></li>
 		    			<li><a href="index.php?ctl=usuario"><i class="material-icons left">supervisor_account</i>Usuarios</a></li>
-				    	<li><a href="index.php?ctl=logout"><i class="material-icons left">power_settings_new</i>Salir</a></li>
+				    	<li><a href="index.php?ctl=logout"><i class="material-icons left">power_settings_new</i>Salir</a></li>	
 				  	</ul>					  	
 				  	<ul id="dropdownAdmin" class="dropdown-content">
 						<li class="right-align"><a href="index.php?ctl=logout"><i class="material-icons left">power_settings_new</i>Salir</a></li>	
